@@ -154,6 +154,7 @@ SLIDE DOWN
   }
   to {
     top: 55%;
+    scroll-behavior: smooth !important;
   }
 }
 

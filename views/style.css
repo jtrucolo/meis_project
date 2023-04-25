@@ -11,6 +11,7 @@
     --font-title: 'Source Sans Pro', sans-serif;
     --font-text: 'Barlow', sans-serif;
     --color: #0E3A5D;
+    --form_color: #8c8c8c;
     --bg_img: url(../assets/a60b1be70b6d4c194b2ed9ecae0a1d35.jpg);
 }
 .headerContent {
@@ -61,7 +62,7 @@ Controles de Formulario
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 9999;
-    background-color: var(--color);
+    background-color: var(--form_color);
     border-radius: 6px;
 }
   

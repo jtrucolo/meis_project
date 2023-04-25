@@ -58,12 +58,14 @@ Controles de Formulario
 */
   #widget-formulario {
     position: fixed;
-    top: 57%;
+    top: -100%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 9999;
     background-color: var(--form_color);
     border-radius: 6px;
+
+    animation: slide-down .5s ease-in-out forwards;
 }
   
 #fechar-formulario {
@@ -128,4 +130,17 @@ pre load
   font-family: var(--font-title);
   color: var(--color);
   font-weight: 300;
+}
+
+
+/*
+SLIDE DOWN
+*/
+@keyframes slide-down {
+  from {
+    top: -70%;
+  }
+  to {
+    top: 55%;
+  }
 }

@@ -1,5 +1,5 @@
 <?php
 
 $routes = [
-    'conexao' => '/connection.php'
+    'conexao' => 'ConnectionClass'
 ];

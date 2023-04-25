@@ -22,24 +22,25 @@
 .bg-news {
   background-color: #1A71D8;
   border-radius: 6px;
-  width: 340px;
-  height: 60px;
+  width: 380px;
+  height: 80px;
   margin-top: 3rem;
   display: flex;
+  align-items: center;
   margin-left: auto;
   margin-right: auto;
   color: #fff;
   font-size: 14px;
 }
 
-.bg-news p {
+#news {
   display: flex;
   justify-content: center;
   text-align: left;
-  text-align: center;
   margin-top: auto;
   margin-bottom: auto;
-  padding: 1px;
+  padding: 10px;
+  animation: slide-in 1s forwards;
 }
 
 .middleContent {
@@ -138,7 +139,7 @@ PRELOADER
 .line {
   margin-top: 10%;
   width: 70%;
-  background-color: #8c8c8c;
+  background-color: var(--form_color);
   height: 1px;
   opacity: 30%;
 }
@@ -152,6 +153,19 @@ SLIDE DOWN
     top: -70%;
   }
   to {
-    top: 63%;
+    top: 55%;
+  }
+}
+
+/*
+SLIDE NEWS
+*/
+
+@keyframes slide-in {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0;
   }
 }

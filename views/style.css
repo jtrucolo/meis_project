@@ -59,7 +59,7 @@
 CONTROLE DO FORMULARIO
 */
 
-  #widget-formulario {
+#widget-formulario {
     position: fixed;
     top: -100%;
     left: 50%;
@@ -67,8 +67,15 @@ CONTROLE DO FORMULARIO
     z-index: 9999;
     background-color: var(--form_color);
     border-radius: 6px;
+    height: 300px;
 
     animation: slide-down .5s ease-in-out forwards;
+}
+
+#widget-formulario iframe {
+  display: flex;
+  justify-content: center;
+  margin-top: .5rem;
 }
   
 #fechar-formulario {
@@ -153,7 +160,7 @@ SLIDE DOWN
     top: -70%;
   }
   to {
-    top: 55%;
+    top: 30%;
     scroll-behavior: smooth !important;
   }
 }

@@ -67,7 +67,6 @@ CONTROLE DO FORMULARIO
     z-index: 9999;
     background-color: var(--form_color);
     border-radius: 6px;
-    height: 300px;
 
     animation: slide-down .5s ease-in-out forwards;
 }
@@ -160,7 +159,7 @@ SLIDE DOWN
     top: -70%;
   }
   to {
-    top: 30%;
+    top: 53%;
     scroll-behavior: smooth !important;
   }
 }

@@ -15,6 +15,80 @@
     --bg_img: url(../assets/a60b1be70b6d4c194b2ed9ecae0a1d35.jpg);
 }
 
+#estados_cidades_brasil {
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  margin-top: 10px;
+  justify-content: space-around;
+}
+
+.ficheiro {
+  margin-top: 20px;
+}
+
+/*
+FORMULARIO DE LOGIN
+*/
+.frm_login {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  height: 300px;
+  background-color: var(--form_color);
+  border-radius: 6px;
+}
+
+.frm_login input {
+  margin-top: 10px;
+}
+
+.input_box {
+  padding: 6px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  background-color: var(--form_color);
+}
+
+.input_box::placeholder {
+  color: var(--color);
+}
+
+.input_box::placeholder:hover {
+  border: none !important;
+}
+
+.login_btn {
+  background-color: var(--color);
+  color: var(--form_color);
+  border-radius: 6px;
+  border: none;
+  width: 90px;
+  height: 30px;
+  margin-top: 40px !important;
+}
+
+/*
+RODAPE LOGIN
+*/
+
+.footer_index {
+  margin-top: 67%;
+  color: #000;
+  font-size: 10px;
+  font-weight: 400;
+  font-family: var(--font-text);
+}
+
+/*
+TELA DE SISTEMA
+*/
+
 .headerContent {
   background-color: #D9D9D9;
 }
@@ -92,17 +166,32 @@ PRELOADER
 */
 
 .preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #f5f5f5;
-  z-index: 9999;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100vh;
+  opacity: 0; /* Começa com opacidade 0 para estar oculta */
+  animation: fadeUp 1s forwards; /* Inicia a animação ao ser exibida */
+}
+
+.preloader figure {
+  margin-bottom: 20px; /* Espaçamento entre a imagem e a mensagem */
+}
+
+.welcome-message {
+  top: -30%;
+}
+
+@keyframes fadeUp {
+  0% {
+      opacity: 0;
+      transform: translateY(100%); /* Começa abaixo da div */
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0%); /* Termina no topo da div */
+  }
 }
 
 #preloader {
@@ -159,7 +248,7 @@ SLIDE DOWN
     top: -70%;
   }
   to {
-    top: 53%;
+    top: 40%;
     scroll-behavior: smooth !important;
   }
 }
@@ -175,4 +264,35 @@ SLIDE NEWS
   100% {
     right: 0;
   }
+}
+
+.frm_cadastro_servico {
+  display: flex;
+  align-items: start;
+  padding: 10px;
+  height: 30vh;
+  width: 90vw;
+  border-radius: 6px;
+}
+
+.frm_cadastro_servico select {
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color);
+  color: #333;
+}
+
+.frm_cadastro_servico option {
+  background: transparent;
+  color: #333;
+}
+
+.frm_cadastro_servico input {
+  margin-top: 10px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color);
+}
+.frm_cadastro_servico input::placeholder {
+  color: #333;
 }

@@ -1,181 +1,30 @@
-<!-- Diovana ♥ -->
 <!DOCTYPE html>
 <html lang="PT-BR">
 <head>
-    <meta charset="UTF-8">
-    <link rel="shortcut icon" href="./assets/Real_Marca Branca.png" type="image/x-icon">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="./views/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!--
-      JS / JQUERY
-    -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
-
-    <!--
-      BOOTSTRAP
-    -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-
-    <script src="./scripts/preload.js"></script>
-    <title>MEIs Project</title>
-  </head>
-  <body>
-
-
-  <div class="preloader">
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="./assets/Real_Marca Branca.png" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./views/style.css">
+  <title>MEIs Project</title>
+</head>
+<body>
+  <main>
     <figure>
-      <img src="./assets/LOGO_REAL.png" alt="#">
+      <img src="./assets/LOGO_REAL.png" alt="Logo Real" width="150px">
     </figure>
-    <div class="welcome-message"></div>
-  </div>
+    <form action="#" class="frm_login" onsubmit="return validateForm()">
+      <input id="user_input" class="input_box" type="text" placeholder="Usuario">
+      <input id="pw_input" class="input_box" type="password" placeholder="Senha">
+      <input class="login_btn" type="submit" value="Conectar" onclick="validarInputs()">
 
-  <header class="headerContent">
-
-    <!--
-    NAVBAR
-    -->
-
-    <nav class="navbar">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="./assets/LOGO_REAL.png" width="120px" alt="Logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="bi bi-list-nested"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <button id="exibir-formulario" onclick="showForm()" class="nav-link" aria-current="page">Registrar Dados</button>
-
-            <!--
-              FORMULARIO DE COLETAS
-            -->
-
-              <div id="widget-formulario" style="display: none;">
-              <button id="fechar-formulario">
-                <i style="color: #FFF;" class="bi bi-x-lg"></i>
-              </button>
-              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfAAAn9dgT94PUO8a7OCElFP0Legt3PaEw_aLoYtQiUF7G3AA/viewform?embedded=true" width="400" height="666" frameborder="0" marginheight="0" marginwidth="0"></iframe>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" >Solicitar Livro Caixa</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Solicitar Dashboard</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link">Suporte</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-
-    <main>
-
-      <!--
-      NEWS
-      -->
-
-        <div class="bg-news">
-          <p id="news"></p>
-        </div>
-
-
-        <div class="line"></div>
-
-
-      <!--
-      CARROUSSEL
-      -->
-        
-        <div class="middleContent">
-          <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="./assets/LOGO_REAL.png" class="d-block w-100" alt="#">
-              </div>
-              <div class="carousel-item">
-                <img src="./assets/LOGO_REAL.png" class="d-block w-100" alt="#">
-              </div>
-              <div class="carousel-item">
-                <img src="./assets/LOGO_REAL.png" class="d-block w-100" alt="#">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-        </div>
-
-        <div class="line"></div>
-
-            <figure>
-                <img class="footerLogo" src="./assets/LOGO_REAL.png" width="220px" alt="Real Assessoria Logo">
-            </figure>
-        </div>
-    </main>
-
-    <!--
-    MODAL EMAIL
-    -->
-
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Solicitar Livro Caixa</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="mb-3">
-                  <label for="message-text" class="col-form-label">Informe seu CNPJ</label>
-                  <label for="recipient-name" class="col-form-label"></label>
-                  <input type="text" class="form-control" id="recipient-name" required>
-                <div class="mb-3">
-                  <label for="message-text" class="col-form-label">Informações Desejadas</label>
-                  <textarea class="form-control" id="message-text" required></textarea>
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-primary">
-                <a style="color: #FFF; text-decoration: none;" href="mailto:contatomeis@realassessoria.com">
-                  Solicitar
-                </a>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
+      <p></p>
+    </form>
+  </main>
+  <footer>
+    <h4 class="footer_index">Todos os direitos reservados - Real Tech LTDA.</h4>
+  </footer>
 </body>
-
-<script src="https://unpkg.com/scrollreveal"></script>
-<script src="./views/script.js"></script>
-
-
-<script src="./scripts/change_news.js"></script>
-<script src="./scripts/showForm.js"></script>
-<script src="./scripts/abrir-form.js"></script>
-<script src="./scripts/abrir-form-fim.js"></script>
-<script src="./scripts/fechar-form.js"></script>
-<script src="./scripts/fechar-form-fim.js"></script>
-<script src="./scripts/preload-form.js"></script>
-<script src="./scripts/welcome-message.js"></script>
+<script src="./scripts/login_inputs_check.js"></script>
+<script src="./database/form_data_validate.js"></script>
 </html>

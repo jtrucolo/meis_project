@@ -1,4 +1,17 @@
 <!-- Diovana ♥ -->
+<?php
+require_once './logged.php';
+
+session_start();
+
+if(!isset($_SESSION['logged_user'])) {
+
+  header('Location: ../index.php');
+  exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="PT-BR">
 <head>
@@ -13,6 +26,8 @@
     -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!--
       BOOTSTRAP
@@ -60,53 +75,53 @@
               <div class="modal fade" id="cadastro_servico" aria-labelledby="cadastro_servico" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
-                    <div class="modal-body">
+                    <div class="modal-body modal-lg">
                       <div class="frm_cadastro_servico">
-                        <form action="">
+                        <form action="" method="POST" enctype="multipart/form-data">
                           <select name="tipo_de_servico" id="#">
                             <option value="#">Selecione o Tipo de Serviço Prestado</option>
-                            <option>Agua e Esgoto</option>
-                            <option>Alimentação</option>
-                            <option>Alugueis</option>
-                            <option>Bens de Pequeno Valor</option>
-                            <option>Brindes e Bonificações</option>
-                            <option>Combustivel</option>
-                            <option>Condomínio</option>
-                            <option>Correios</option>
-                            <option>Despesas Bancárias</option>
-                            <option>Encargos</option>
-                            <option>Energia Elétrica</option>
-                            <option>Eventos/Feiras</option>
-                            <option>Fretes</option>
-                            <option>Honorários</option>
-                            <option>Impostos</option>
-                            <option>Impostos e Taxas</option>
-                            <option>IPVA</option>
-                            <option>Juros de Mora</option>
-                            <option>Locações</option>
-                            <option>Manutenção e Conservação</option>
-                            <option>Manutenções</option>
-                            <option>Matéria Prima</option>
-                            <option>Material de Consumo</option>
-                            <option>Material de Expediente</option>
-                            <option>Material de Limpeza</option>
-                            <option>Mensalidades e Assinaturas</option>
-                            <option>Mercadoria</option>
-                            <option>Pro Labore</option>
-                            <option>Propaganda e Publicidade</option>
-                            <option>Salários</option>
-                            <option>Seguros</option>
-                            <option>Telefone e Internet</option>
-                            <option>Viagens</option>
-                            <option>Serviços de Terceiros</option>
+                            <option value="Agua e Esgoto">Agua e Esgoto</option>
+                            <option value="Alimentação">Alimentação</option>
+                            <option value="Alugueis">Alugueis</option>
+                            <option value="Bens de Pequeno Valor">Bens de Pequeno Valor</option>
+                            <option value="Brindes e Bonificações">Brindes e Bonificações</option>
+                            <option value="Combustivel">Combustivel</option>
+                            <option value="Condomínio">Condomínio</option>
+                            <option value="Correios">Correios</option>
+                            <option value="Despesas Bancárias">Despesas Bancárias</option>
+                            <option value="Encargos">Encargos</option>
+                            <option value="Energia Elétrica">Energia Elétrica</option>
+                            <option value="Eventos/Feiras">Eventos/Feiras</option>
+                            <option value="Fretes">Fretes</option>
+                            <option value="Honorários">Honorários</option>
+                            <option value="Impostos">Impostos</option>
+                            <option value="Impostos e Taxas">Impostos e Taxas</option>
+                            <option value="IPVA">IPVA</option>
+                            <option value="Juros de Mora">Juros de Mora</option>
+                            <option value="Locações">Locações</option>
+                            <option value="Manutenção e Conservação">Manutenção e Conservação</option>
+                            <option value="Manutenções">Manutenções</option>
+                            <option value="Matéria Prima">Matéria Prima</option>
+                            <option value="Material de Consumo">Material de Consumo</option>
+                            <option value="Material de Expediente">Material de Expediente</option>
+                            <option value="Material de Limpeza">Material de Limpeza</option>
+                            <option value="Mensalidades e Assinaturas">Mensalidades e Assinaturas</option>
+                            <option value="Mercadoria">Mercadoria</option>
+                            <option value="Pro Labore">Pro Labore</option>
+                            <option value="Propaganda e Publicidade">Propaganda e Publicidade</option>
+                            <option value="Salários">Salários</option>
+                            <option value="Seguros">Seguros</option>
+                            <option value="Telefone e Internet">Telefone e Internet</option>
+                            <option value="Viagens">Viagens</option>
+                            <option value="Serviços de Terceiros">Serviços de Terceiros</option>
                           </select>
                         <div style="display: flex; flex-direction: row;">
                           <input type="date" name="data" class="bi bi-calendar" style="width: 130px;">
-                          <input type="text" placeholder="Orçamento" id="valor_servico" style="margin-top: 30px; width: 90px; margin-left: 50px;">
+                          <input type="text" placeholder="Orçamento" name="valor_servico" id="valor_servico" style="margin-top: 30px; width: 90px; margin-left: 50px;">
                         </div>
                           <label for="location" style="margin-top: 30px;">Serviço prestado no estado do RS?  </label>
-                          <input id="checkbox1" type="checkbox" name="checkboxGroup" onclick="turnCountry()">Sim 
-                          <input id="checkbox2" type="checkbox" name="checkboxGroup" onclick="turnCountry()">Não
+                          <input id="checkbox1" type="checkbox" value="sim" name="checkboxGroup" onclick="turnCountry()">Sim 
+                          <input id="checkbox2" type="checkbox" value="nao" name="checkboxGroup" onclick="turnCountry()">Não
           
                           <div id="estados_cidades_brasil">
                           <select name="estados" id="estados" style="display: none !important;" onchange="carregarCidades()">
@@ -120,19 +135,20 @@
           
                         <label class="ficheiro" for="files">Comprovante do Serviço</label>
                         <input type="file" name="files">
-          
+                      <div class="modal-footer">
+                        <button class="btn btn-primary" name="submit_btn" value="submit">Enviar</button>
+                      </div>
                         </form>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                      <button class="btn btn-primary">Enviar</button>
-                    </div>
+                    <br>
+                    <br>
                   </div>
                 </div>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#livrocaixaModal">Ver meu Livro Caixa</a>
+              <a class="nav-link" href="#" onclick="returnData()" data-bs-toggle="modal" data-bs-target="#livrocaixaModal">Ver meu Livro Caixa</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Solicitar Dashboard (Pensar)</a>
@@ -209,13 +225,12 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="livrocaixaModal">Solicitar Livro Caixa</h5>
+              <h5 class="modal-title" id="livrocaixaModal">Meu Livro Caixa</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               
             </div>
-           
           </div>
         </div>
       </div>
@@ -237,4 +252,6 @@
 <script src="../scripts/checkbox-input.js"></script>
 <script src="../scripts/estados_brasil.js"></script>
 <script src="../scripts/mask_input_orcamento.js"></script>
+<script src="../controller/data_return.js"></script>
+<script src="../controller/submit_request.js"></script>
 </html>

@@ -12,7 +12,7 @@ function validateForm() {
     });
 
     if(isValidUser) {
-        window.location.href = "./views/logged.html";
+        window.location.href = "./views/logged.php";
 
         return false;
     }

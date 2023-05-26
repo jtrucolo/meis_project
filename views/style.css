@@ -141,7 +141,6 @@ CONTROLE DO FORMULARIO
     z-index: 9999;
     background-color: var(--form_color);
     border-radius: 6px;
-
     animation: slide-down .5s ease-in-out forwards;
 }
 

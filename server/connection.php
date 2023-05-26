@@ -2,29 +2,29 @@
 
 DEFINE('HOST','localhost');
 DEFINE('USER','root');
-DEFINE('DB','testeMEIs');
+DEFINE('DB','db_meis');
 DEFINE('PW','');
 
 $connection = mysqli_connect(HOST,USER,PW,DB);
 
 class Conexao {
 
-private $connection;
+    private $connection;
 
     public function Connection($connection) {
-        $this->conexao = $connection;
+        $this->connection = $connection;
     }
 
     public function getConnection() {
 
-        if(!$this->conexao)
+        if(!$this->connection)
         {
-            throw new Exception('Conexao não estabelecida. \n'. @mysqli_connect_error($this->conexao)); 
+            throw new Exception('Conexao não estabelecida. \n'); 
         }
         
-        return $this->conexao;
+        return $this->connection;
     }
 }
 
 $obj = new Conexao();
-$obj = $this->conexao;
+$obj->Connection($connection);

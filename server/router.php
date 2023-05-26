@@ -1,5 +1,6 @@
 <?php
 
 $routes = [
-    'conexao' => 'ConnectionClass'
+    'conexao' => 'ConnectionClass',
+    'mei_real' => 'views\logged.php'
 ];

@@ -73,6 +73,10 @@ FORMULARIO DE LOGIN
   margin-top: 40px !important;
 }
 
+.login_btn:hover {
+  cursor: pointer;
+}
+
 /*
 RODAPE LOGIN
 */

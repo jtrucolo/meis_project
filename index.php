@@ -6,6 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./views/style.css">
+
+<!-- jQuery Ajax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
   <title>MEIs Project</title>
 </head>
 <body>
@@ -13,10 +18,10 @@
     <figure>
       <img src="./assets/LOGO_REAL.png" alt="Logo Real" width="150px">
     </figure>
-    <form action="./model/log_user.php" class="frm_login" onsubmit="return validateForm()">
+    <form class="frm_login" id="frm_login">
       <input id="user_input" class="input_box" name="user_login" type="text" placeholder="Usuario">
       <input id="pw_input" class="input_box" name="pw_user" type="password" placeholder="Senha">
-      <input class="login_btn" type="submit" value="Conectar" onclick="validarInputs()">
+      <input class="login_btn" id="login_btn" type="submit" value="Conectar" onclick="validarInputs()">
 
       <p></p>
     </form>
@@ -26,5 +31,5 @@
   </footer>
 </body>
 <script src="./scripts/login_inputs_check.js"></script>
-<script src="./database/form_data_validate.js"></script>
+<script src="./controller/log_validate_request.js"></script>
 </html>

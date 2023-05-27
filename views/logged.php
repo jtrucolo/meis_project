@@ -27,6 +27,7 @@ if(!isset($_SESSION['logged_user'])) {
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!--
@@ -78,7 +79,7 @@ if(!isset($_SESSION['logged_user'])) {
                     <div class="modal-body modal-lg">
                       <div class="frm_cadastro_servico">
                         <form action="" method="POST" enctype="multipart/form-data">
-                          <select name="tipo_de_servico" id="#">
+                          <select name="tipo_de_servico" id="tipo_de_servico">
                             <option value="#">Selecione o Tipo de Serviço Prestado</option>
                             <option value="Agua e Esgoto">Agua e Esgoto</option>
                             <option value="Alimentação">Alimentação</option>
@@ -116,7 +117,7 @@ if(!isset($_SESSION['logged_user'])) {
                             <option value="Serviços de Terceiros">Serviços de Terceiros</option>
                           </select>
                         <div style="display: flex; flex-direction: row;">
-                          <input type="date" name="data" class="bi bi-calendar" style="width: 130px;">
+                          <input type="date" name="data" id="data" class="bi bi-calendar" style="width: 130px;">
                           <input type="text" placeholder="Orçamento" name="valor_servico" id="valor_servico" style="margin-top: 30px; width: 90px; margin-left: 50px;">
                         </div>
                           <label for="location" style="margin-top: 30px;">Serviço prestado no estado do RS?  </label>
@@ -244,14 +245,14 @@ if(!isset($_SESSION['logged_user'])) {
 <script src="../views/script.js"></script>
 <script src="../scripts/change_news.js"></script>
 <script src="../scripts/showForm.js"></script>
-<script src="../scripts/abrir-form.js"></script>
-<script src="../scripts/abrir-form-fim.js"></script>
-<script src="../scripts/fechar-form.js"></script>
-<script src="../scripts/fechar-form-fim.js"></script>
-<script src="../scripts/welcome-message.js"></script>
-<script src="../scripts/checkbox-input.js"></script>
+<script src="../scripts/abrir_form.js"></script>
+<script src="../scripts/abrir_form_fim.js"></script>
+<script src="../scripts/fechar_form.js"></script>
+<script src="../scripts/fechar_form_fim.js"></script>
+<script src="../scripts/welcome_message.js"></script>
+<script src="../scripts/checkbox_input.js"></script>
 <script src="../scripts/estados_brasil.js"></script>
 <script src="../scripts/mask_input_orcamento.js"></script>
-<script src="../controller/data_return.js"></script>
-<script src="../controller/submit_request.js"></script>
+<script src="../controller/data_return_request.js"></script>
+<script src="../controller/data_submit_request.js"></script>
 </html>

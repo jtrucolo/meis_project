@@ -6,7 +6,7 @@ REAL ASSESSORIA EMPRESARIAL 2023
 
 ## Tecnologias 
 - Servidor ( PHP / MySQL )
-- Clint side ( HTML / CSS / JAVASCRIPT / BOOTSTRAP )
+- Client side ( HTML / CSS / JAVASCRIPT / BOOTSTRAP )
 - Requisições via Ajax / Jquery 
 
 ## Metodologia de Desenvolvimento

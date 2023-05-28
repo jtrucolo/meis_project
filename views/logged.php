@@ -1,7 +1,6 @@
 <!-- Diovana ♥ -->
 <?php
 require_once './logged.php';
-
 session_start();
 
 if(!isset($_SESSION['logged_user'])) {
@@ -76,7 +75,7 @@ if(!isset($_SESSION['logged_user'])) {
               <div class="modal fade" id="cadastro_servico" aria-labelledby="cadastro_servico" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
-                    <div class="modal-body modal-lg">
+                    <div class="modal-body">
                       <div class="frm_cadastro_servico">
                         <form action="" method="POST" enctype="multipart/form-data">
                           <select name="tipo_de_servico" id="tipo_de_servico">

@@ -13,7 +13,7 @@ class InsertData {
 
         $logged_user_id = $_SESSION['logged_user']; // Obtém o ID do usuário logado
         
-        $aux = "SELECT id FROM tbl_dados_meis_cadastro WHERE usuario_mei = ?";
+        $aux = "SELECT usuario_mei FROM tbl_dados_meis_cadastro WHERE usuario_mei = ?";
         $stmt_aux = $this->connection->prepare($aux);
         $stmt_aux->bind_param('s', $logged_user_id);
         $stmt_aux->execute();
@@ -21,16 +21,16 @@ class InsertData {
 
         if ($result_aux->num_rows === 1) {
             $row_aux = $result_aux->fetch_assoc();
-            $user_id = $row_aux['id'];
+            $user_id = $row_aux['usuario_mei'];
 
             $data = [
-                'chave_dados' => $user_id,
                 'tipo_de_servico' => $_REQUEST['tipo_de_servico'],
                 'data' => $_REQUEST['data'],
                 'valor_servico' => $_REQUEST['valor_servico'],
                 'checkboxGroup' => $_REQUEST['checkboxGroup'],
                 'estados' => $_REQUEST['estados'],
-                'cidades' => $_REQUEST['cidades']
+                'cidades' => $_REQUEST['cidades'],
+                'chave_dados' => $user_id
             ];
 
             $columns = implode(', ', array_keys($data));

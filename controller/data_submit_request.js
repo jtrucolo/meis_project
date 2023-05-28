@@ -6,7 +6,7 @@ $(document).ready(function() {
         tipo_de_servico: $('#tipo_de_servico').val(),
         data: $('#data').val(),
         valor_servico: $('#valor_servico').val(),
-        checkboxGroup: $('input[name=checkboxGroup]').val(),
+        checkboxGroup: $('input[name="checkboxGroup"]').val(),
         estados: $('#estados').val(),
         cidades: $('#cidades').val(),
       }

@@ -11,7 +11,21 @@ class Data {
 
     public function getLinkedData() {
 
-$sql = "SELECT * FROM tbl_dados_meis_ativos INNER JOIN tbl_dados_meis_cadastro ON tbl_dados_meis_ativos.chave_dados = tbl_dados_meis_cadastro.chave_dados";
+        session_start();
+        $user_logged_id = $_SESSION['logged_user'];
+
+        $aux = "SELECT nome_completo_mei FROM tbl_dados_meis_cadastro where '$user_logged_id' = tbl_dados_meis_cadastro.usuario_mei";
+
+        $safe_this_name = $this->connection->query($aux);
+
+        if($safe_this_name->num_rows > 0) {
+            $row = $safe_this_name->fetch_assoc();
+            $myNameis = $row['nome_completo_mei'];
+
+            echo "<p>Olá, $myNameis, aqui estão seus Dados até o momento.<p/>";
+        }
+
+        $sql = "SELECT * FROM tbl_dados_meis_ativos WHERE '$user_logged_id' = tbl_dados_meis_ativos.chave_dados";
 
         $result = $this->connection->query($sql);
 

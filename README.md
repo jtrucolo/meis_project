@@ -11,7 +11,8 @@ REAL ASSESSORIA EMPRESARIAL 2023
 - Requisições via Ajax / Jquery 
 
 ## Metodologia de Desenvolvimento
-kanban 
+- Kanban 
 
 
-Desenvolvimento por Johnny Trucolo.
+## Desenvolvimento por 
+Johnny Trucolo.

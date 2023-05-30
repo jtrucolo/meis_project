@@ -26,7 +26,6 @@ if(!isset($_SESSION['logged_user'])) {
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!--
@@ -55,7 +54,7 @@ if(!isset($_SESSION['logged_user'])) {
     NAVBAR
     -->
 
-    <nav class="navbar">
+    <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <img src="../assets/LOGO_REAL.png" width="120px" alt="Logo">
@@ -64,7 +63,7 @@ if(!isset($_SESSION['logged_user'])) {
           <span class="bi bi-list-nested"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <button class="nav-link" aria-current="page" data-bs-toggle="modal" data-bs-target="#cadastro_servico">Registrar Dados</button>
 
@@ -74,7 +73,7 @@ if(!isset($_SESSION['logged_user'])) {
 
               <div class="modal fade" id="cadastro_servico" aria-labelledby="cadastro_servico" aria-hidden="true">
                 <div class="modal-dialog">
-                  <div class="modal-content">
+                  <div class="modal-content" style="height: 350px !important; width: 550px !important;">
                     <div class="modal-body">
                       <div class="frm_cadastro_servico">
                         <form action="" method="POST" enctype="multipart/form-data">
@@ -119,7 +118,7 @@ if(!isset($_SESSION['logged_user'])) {
                           <input type="date" name="data" id="data" class="bi bi-calendar" style="width: 130px;">
                           <input type="text" placeholder="Orçamento" name="valor_servico" id="valor_servico" style="margin-top: 30px; width: 90px; margin-left: 50px;">
                         </div>
-                          <label for="location" style="margin-top: 30px;">Serviço prestado no estado do RS?  </label>
+                          <label for="location" style="margin-top: 30px;">Serviço prestado no estado do RS?  </label><br/>
                           <input id="checkbox1" type="checkbox" value="sim" name="checkboxGroup" onclick="turnCountry()">Sim 
                           <input id="checkbox2" type="checkbox" value="nao" name="checkboxGroup" onclick="turnCountry()">Não
           
@@ -148,7 +147,7 @@ if(!isset($_SESSION['logged_user'])) {
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" onclick="returnData()" data-bs-toggle="modal" data-bs-target="#livrocaixaModal">Ver meu Livro Caixa</a>
+              <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#livrocaixaModal">Ver meu Livro Caixa</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Solicitar Dashboard (Pensar)</a>
@@ -218,22 +217,36 @@ if(!isset($_SESSION['logged_user'])) {
     </main>
 
     <!--
-    MODAL EMAIL
+    MODAL LIVRO CAIXA
     -->
 
-      <div class="modal fade" id="livrocaixaModal" tabindex="-1" aria-labelledby="livrocaixaModal" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="livrocaixaModal">Meu Livro Caixa</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              
-            </div>
-          </div>
-        </div>
+<div class="modal fade" id="livrocaixaModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="livrocaixaModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="livrocaixaModal">Meu Livro Caixa</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <div class="modal-body">
+        <p>Realize o Filtro dos seus Registros.</p>
+        <div class="form-group">
+          <label for="data-inicial">Data Inicial:</label>
+          <input type="date" class="form-control" id="data-inicial" required>
+        </div>
+        <div class="form-group">
+          <label for="data-final">Data Final:</label>
+          <input type="date" class="form-control" id="data-final" required>
+        </div>
+  <br/>
+        <div id="retornoDados"></div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" id="btn_date_request" onclick="returnData()">Filtrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
       <!--
         MODAL FAQ

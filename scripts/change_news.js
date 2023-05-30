@@ -1,8 +1,8 @@
-const news = [  "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+const news = [  "Mantenha um registro organizado de todas as transações financeiras da sua empresa para facilitar a análise e o acompanhamento.",
+"Faça a conciliação bancária regularmente para garantir a precisão das suas informações financeiras.",
+"Realize uma análise detalhada dos seus custos e despesas para identificar oportunidades de redução de gastos.",
+"Registre todas as receitas e despesas separadamente por categorias para uma visão clara da saúde financeira do seu negócio.",
+"Planeje e acompanhe o fluxo de caixa da sua empresa para evitar surpresas financeiras e garantir a sustentabilidade."
 ];
 
 let i = 0;
@@ -12,4 +12,4 @@ setInterval(() => {
   if (i === news.length) {
     i = 0;
   }
-}, 2000);
+}, 5000);
